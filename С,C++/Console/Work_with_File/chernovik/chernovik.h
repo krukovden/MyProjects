@@ -1,0 +1,10 @@
+void PRINTmenu(char menu[][35],int size, int &cursor);
+void PrintFile(char * fileName, bool withNumberString);
+void WriteFile(char * fileName);
+int StringCount(char * fileName);
+void FileStringsToArray(char * fileName);
+void Sort(char * fileName, bool (*Predicat)(int a, int b));
+bool MAX(int a, int b);
+bool MIN(int a, int b);
+void Dublicat(char * fileName);
+void DeleteStr(char * fileName);

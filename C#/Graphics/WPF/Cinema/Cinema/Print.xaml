@@ -1,0 +1,50 @@
+﻿<Window x:Class="Cinema.Print"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Print" Height="518" Width="300">
+    <Grid>
+        <FlowDocumentPageViewer Margin="0,0,0,95">
+            <FlowDocument>
+                <Paragraph>
+                    <InlineUIContainer>
+                        <Label Content="                      Megastar" HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold" />
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Билет в кино
+                </Paragraph>
+                <Paragraph>
+                    Фильм
+                    <InlineUIContainer>
+                        <Label Name="FilmName"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Начало сеанса
+                    <InlineUIContainer>
+                        <Label Name="startfilm"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Ряд
+                    <InlineUIContainer>
+                        <Label Name="row"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                   Место
+                    <InlineUIContainer>
+                        <Label Name="place"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Цена
+                    <InlineUIContainer>
+                        <Label Name="price"/>
+                    </InlineUIContainer>
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentPageViewer >
+        <Button Content="Печать" Height="73" HorizontalAlignment="Left" Margin="10,0,0,5" Name="button1" VerticalAlignment="Bottom" Width="268" Background="#FF00D500" FontSize="16" FontWeight="Bold" Click="button1_Click" />
+    </Grid>
+</Window>

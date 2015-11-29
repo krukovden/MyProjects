@@ -1,0 +1,21 @@
+﻿<Window x:Class="Cinema.Statistic"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Statistic" Height="300" Width="300">
+    <Grid Style="{StaticResource ResourceKey=ggg}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="76*" />
+            <RowDefinition Height="67*" />
+            <RowDefinition Height="59*" />
+            <RowDefinition Height="59*" />
+        </Grid.RowDefinitions>
+        <Label Content="Зарезервировано" FontWeight="Bold" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="28,29,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Label" FontWeight="Bold" Foreground="White" Height="26" HorizontalAlignment="Left" Margin="179,29,0,0" Name="res" VerticalAlignment="Top" />
+        <Label Content="Продано" FontWeight="Bold" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="28,21,0,0" Name="label3" VerticalAlignment="Top" Grid.Row="1" />
+        <Label Content="Label" FontWeight="Bold" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="179,21,0,0" Name="buy" VerticalAlignment="Top" Grid.Row="1" />
+        <Label Content="Прибыль фактическая" FontWeight="Bold" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="28,19,0,0" Name="label5" VerticalAlignment="Top" Grid.Row="2" />
+        <Label Content="Label" FontWeight="Bold" Foreground="White" Height="28" HorizontalAlignment="Right" Margin="0,19,59,0" Name="all" VerticalAlignment="Top" Grid.Row="2" />
+        <Label Content="Прибыль ожидаемая" FontWeight="Bold" Foreground="White" Height="28" HorizontalAlignment="Left" Margin="28,19,0,0" Name="label2" VerticalAlignment="Top" Grid.Row="3" />
+        <Label Content="Label" FontWeight="Bold" Foreground="White" Height="28" HorizontalAlignment="Right" Margin="0,19,59,0" Name="maybe" VerticalAlignment="Top" Grid.Row="3" />
+    </Grid>
+</Window>

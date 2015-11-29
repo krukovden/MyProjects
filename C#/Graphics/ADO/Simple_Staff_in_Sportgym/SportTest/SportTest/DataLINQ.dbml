@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Kursach_sport" Class="DataLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PK;Initial Catalog=Kursach_sport;Integrated Security=True" SettingsObjectName="SportTest.Properties.Settings" SettingsPropertyName="Kursach_sportConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Abonement" Member="Abonement">
+    <Type Name="Abonement">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="limit_Enter" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="limit_Exit" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Association Name="Client_Abonement" Member="Client" ThisKey="id" OtherKey="id_abonement" Type="Client" IsForeignKey="true" />
+      <Association Name="History_buy_Abonement" Member="History_buy" ThisKey="id" OtherKey="id_abonement" Type="History_buy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Client" Member="Client">
+    <Type Name="Client">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_abonement" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="counts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="limit_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Client_Abonement" Member="Abonement" ThisKey="id_abonement" OtherKey="id" Type="Abonement" />
+      <Association Name="Client_Users" Member="Users" ThisKey="id_user" OtherKey="id" Type="Users" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Coach" Member="Coach">
+    <Type Name="Coach">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="lave" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Coach_Users" Member="Users" ThisKey="id_user" OtherKey="id" Type="Users" />
+    </Type>
+  </Table>
+  <Table Name="dbo.History_buy" Member="History_buy">
+    <Type Name="History_buy">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="id_abonement" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dates" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="History_buy_Abonement" Member="Abonement" ThisKey="id_abonement" OtherKey="id" Type="Abonement" />
+      <Association Name="History_buy_Users" Member="Users" ThisKey="id_user" OtherKey="id" Type="Users" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="number_card" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Client_Users" Member="Client" ThisKey="id" OtherKey="id_user" Type="Client" IsForeignKey="true" />
+      <Association Name="Coach_Users" Member="Coach" ThisKey="id" OtherKey="id_user" Type="Coach" IsForeignKey="true" />
+      <Association Name="History_buy_Users" Member="History_buy" ThisKey="id" OtherKey="id_user" Type="History_buy" IsForeignKey="true" />
+      <Association Name="Visiting_Users" Member="Visiting" ThisKey="id" OtherKey="id_user" Type="Visiting" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visiting" Member="Visiting">
+    <Type Name="Visiting">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dateEnter" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="deteExit" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Visiting_Users" Member="Users" ThisKey="id_user" OtherKey="id" Type="Users" />
+    </Type>
+  </Table>
+</Database>

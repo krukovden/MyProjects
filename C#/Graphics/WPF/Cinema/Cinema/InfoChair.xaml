@@ -1,0 +1,61 @@
+﻿<Window x:Class="Cinema.InfoChair"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="InfoChair" Height="517" Width="293">
+    <Grid Height="453">
+        <FlowDocumentPageViewer Margin="0,0,0,0">
+            <FlowDocument>
+                <Paragraph>
+                    <InlineUIContainer>
+                        <Label Content="                      Megastar" HorizontalAlignment="Center" Foreground="Red" FontWeight="Bold" />
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Билет в кино
+                </Paragraph>
+                <Paragraph>
+                    Фильм
+                    <InlineUIContainer>
+                        <Label Name="FilmName"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Начало сеанса
+                    <InlineUIContainer>
+                        <Label Name="startfilm"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Ряд
+                    <InlineUIContainer>
+                        <Label Name="row"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Место
+                    <InlineUIContainer>
+                        <Label Name="place"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Цена
+                    <InlineUIContainer>
+                        <Label Name="price"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Владелец
+                    <InlineUIContainer>
+                        <Label Name="owner"/>
+                    </InlineUIContainer>
+                </Paragraph>
+                <Paragraph>
+                    Телефон
+                    <InlineUIContainer>
+                        <Label Name="mobile"/>
+                    </InlineUIContainer>
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentPageViewer >
+    </Grid>
+</Window>
