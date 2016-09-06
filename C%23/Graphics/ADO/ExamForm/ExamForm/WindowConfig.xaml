@@ -1,0 +1,48 @@
+﻿<Window x:Class="ExamForm.WindowConfig"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cm="clr-namespace:System.ComponentModel;assembly=System"
+        xmlns:local="clr-namespace:ExamForm"
+        mc:Ignorable="d"
+        Title="Налаштування" Height="400" Width="410" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Resources>
+        <cm:BackgroundWorker x:Key="backgroundWorker" WorkerReportsProgress="True" WorkerSupportsCancellation="True" DoWork="BackgroundWorker_DoWork" RunWorkerCompleted="BackgroundWorker_RunWorkerCompleted" />
+    </Window.Resources>
+    <Grid Style="{StaticResource GridStyle}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="labelType" Content="Тип підключення" HorizontalAlignment="Left"  VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman"/>
+        <Label x:Name="labelDataS" Content="Джерело даних" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman"/>
+        <Label x:Name="labelFile" Content="Файл бази даних" HorizontalAlignment="Left"  Grid.Row="2" VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman"/>
+        <Label x:Name="labelCatalog" Content="Каталог бази даних" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman"/>
+        <Label x:Name="labelSecurity" Content="Авторизація Windows" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman"/>
+        <Label x:Name="labelUser" Content="Логін" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman"/>
+        <Label x:Name="labelPass" Content="Пароль" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Center" FontSize="16" FontFamily="Times New Roman"/>
+        <ComboBox x:Name="comboBoxType" Style="{StaticResource ComboBoxTest2}" Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="230" FontSize="16" FontFamily="Times New Roman" DropDownOpened="comboBox_DropDownOpened" SelectionChanged="comboBoxType_SelectionChanged"/>
+        <TextBox x:Name="textBoxSource" Style="{StaticResource TextBoxStyle}" Grid.Column="1" HorizontalAlignment="Left" Height="22" Grid.Row="1" Text="TextBox" VerticalAlignment="Center" Width="170" FontSize="16" FontFamily="Times New Roman"/>
+        <TextBox x:Name="textBoxAttachFile" Style="{StaticResource TextBoxStyle}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="2" Text="TextBox" VerticalAlignment="Center" Width="170" FontSize="16" FontFamily="Times New Roman" TextChanged="textBoxAttachFile_TextChanged" />
+        <TextBox x:Name="textBoxCatalog" Style="{StaticResource TextBoxStyle}" Grid.Column="1" HorizontalAlignment="Left" Height="24" Grid.Row="3" Text="TextBox" VerticalAlignment="Center" Width="170" FontSize="16" FontFamily="Times New Roman"/>
+        <ComboBox x:Name="comboBoxSec" Style="{StaticResource ComboBoxTest2}" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" Width="120" FontSize="16" FontFamily="Times New Roman"/>
+        <TextBox x:Name="textBoxLogin" Style="{StaticResource TextBoxStyle}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="5" Text="TextBox" VerticalAlignment="Center" Width="170" FontSize="16" FontFamily="Times New Roman"/>
+        <TextBox x:Name="textBoxPass" Style="{StaticResource TextBoxStyle}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Grid.Row="6" Text="TextBox" VerticalAlignment="Center" Width="170" FontSize="16" FontFamily="Times New Roman"/>
+        <Button x:Name="button" Content="Зберегти" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Width="110" Grid.ColumnSpan="2" FontSize="16" FontFamily="Times New Roman" Click="button_Click"/>
+        <Button x:Name="buttonCheck" Style="{StaticResource ButtonStyle}" Content="Перевірка" ToolTip="Перевірка зв`язку з базою" HorizontalAlignment="Right" Grid.Row="7" VerticalAlignment="Center" Height="40" Click="buttonCheck_Click" Margin="20,0"/>
+        <ProgressBar x:Name="progressbar" Grid.ColumnSpan="2" Grid.Row="8" Margin="10" IsIndeterminate="True" />
+        <Button x:Name="buttonChoose" Style="{StaticResource ButtonStyle}" ToolTip="Обрати базу" Content=" Обрати " Height="40" Grid.Column="1" HorizontalAlignment="Right" Margin="5" Grid.Row="2" VerticalAlignment="Center" Click="buttonChoose_Click" />
+    </Grid>
+</Window>

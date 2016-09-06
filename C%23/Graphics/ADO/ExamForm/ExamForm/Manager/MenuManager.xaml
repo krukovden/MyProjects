@@ -1,0 +1,34 @@
+﻿<Window x:Class="ExamForm.Manager.MenuManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamForm.Manager"
+        mc:Ignorable="d"
+        Title="Меню адміністратора" Height="400" Width="350" Loaded="Window_Loaded">
+    <Grid Style="{StaticResource GridStyle}">
+        <Grid.ColumnDefinitions>           
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btQuestions" Style="{StaticResource ButtonStyle}" Height="70" Content="Запитання" ToolTip="Запитання" HorizontalAlignment="Center"  VerticalAlignment="Center"  Click="btQuestions_Click">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="buttonAdmins" Style="{StaticResource ButtonStyle}" Height="70" Content="Адміністратори" ToolTip="Адміністратори" Grid.Row="1"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Click="buttonAdmins_Click"/>
+        <Button x:Name="buttonProtocol" Style="{StaticResource ButtonStyle}" Height="70" Content="Користувачі" ToolTip="Користувачі"  Grid.Row="2"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Click="buttonProtocol_Click"/>
+        <Button x:Name="buttonProtocol_Real" Style="{StaticResource ButtonStyle}" Height="70" Content="Протокол" ToolTip="Користувачі"  Grid.Row="3"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Click="buttonProtocol_Real_Click"/>
+
+        <Label x:Name="label"  Style="{StaticResource ButtonStyle}" Content="Коректувати запитання" Grid.Column="1" FontSize="16"  HorizontalAlignment="Left"  VerticalAlignment="Bottom"/>
+        <Label x:Name="label1" Style="{StaticResource ButtonStyle}" Content="Адміністратори" Grid.Column="1" Grid.Row="1" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Bottom"/>
+        <Label x:Name="label2" Style="{StaticResource ButtonStyle}" Content="Користувачі"    Grid.Column="1" Grid.Row="2" FontSize="16" HorizontalAlignment="Left"   VerticalAlignment="Bottom"/>
+        <Label x:Name="label3" Style="{StaticResource ButtonStyle}" Content="Протокол"    Grid.Column="1" Grid.Row="3" FontSize="16" HorizontalAlignment="Left"   VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Connect>
+  <SourceDataL>(localdb)\v11.0</SourceDataL>
+  <SourceDataN>192.168.202.5</SourceDataN>
+  <AttachDbFilename></AttachDbFilename>
+  <InitialCatalog>Exam1</InitialCatalog>
+  <Security>False</Security>
+  <User>XXXX</User>
+  <Password>XXXX</Password>
+  <Islocal>true</Islocal>
+</Connect>

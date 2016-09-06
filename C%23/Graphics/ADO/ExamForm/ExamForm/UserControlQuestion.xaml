@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ExamForm.UserControlQuestion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ExamForm"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid x:Name="grid" Style="{StaticResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>          
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="StackAnswer"   Margin="10" Grid.Row="3" />       
+        <TextBlock x:Name="labelQuestion" Margin="10" Grid.Row="1"  TextWrapping="Wrap" Text="TextBlock" FontSize="21.333" FontFamily="Times New Roman" FontWeight="Bold"/>
+        <TextBlock x:Name="labelTopic" Text="LabelTopic" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18.667" FontFamily="Times New Roman" FontWeight="Bold"/>
+        <TextBlock x:Name="labeInfo" Text="LabelInfo"  Margin="10" TextWrapping="Wrap" Grid.Row="2"  FontSize="18.667" FontStyle="Italic" FontFamily="Times New Roman"/>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,7 @@
+<?xml version='1.0' ?>
+<Connect>
+  <SourceData>test</SourceData>
+  <InitialCatalog>rrr</InitialCatalog>
+  <User></User>
+  <Password></Password>
+</Connect>
