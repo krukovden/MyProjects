@@ -1,0 +1,32 @@
+﻿<Window x:Class="ExamForm.WindowTicket"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cm="clr-namespace:System.ComponentModel;assembly=System"
+        xmlns:local="clr-namespace:ExamForm"
+        mc:Ignorable="d"
+        Title="Тест розпочато" Height="700" Width="700" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Window.Resources>
+        <cm:BackgroundWorker x:Key="backgroundWorker" WorkerReportsProgress="True" 
+                                                      WorkerSupportsCancellation="True" 
+                                                      DoWork="BackgroundWorker_DoWork" 
+                                                      RunWorkerCompleted="BackgroundWorker_RunWorkerCompleted" 
+                                                      />
+    </Window.Resources>
+    <Grid x:Name="grid">
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="16*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="labelNameTicket" Content="Завантаження білету..." HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" />
+        <ScrollViewer x:Name="scroll"  VerticalScrollBarVisibility="Visible"  Grid.Row="1"  HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Width="{Binding ElementName=grid,Path=ActualWidth}">
+            <StackPanel  x:Name="StackPanelQuestion"  HorizontalAlignment="Left"   VerticalAlignment="Top" Width="{Binding ElementName=scroll,Path=ActualWidth}"/>
+           </ScrollViewer>
+        <Button x:Name="buttonOk" Content="Завершити" HorizontalAlignment="Center"  Grid.Row="2"  VerticalAlignment="Center" Width="150" Height="60" FontFamily="Times New Roman" FontSize="24" FontWeight="Bold" Click="buttonOk_Click"/>
+        <ProgressBar x:Name="progressbar"  Margin="7" Grid.Row="3" IsIndeterminate="True" />
+    </Grid>
+</Window>
